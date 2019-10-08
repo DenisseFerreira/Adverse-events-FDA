@@ -1,27 +1,27 @@
 
 class Fetcher {
-//clave api RYmbU8tBEcI7pFqZeK9QCqCpGj8NDMOYjci9ISn1
-//ejemplo https://api_basics.fda.gov/drug/event.json?api_key=yourAPIKeyHere&search=...
-//ejemplo de busqueda https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:"fatigue"&limit=1
-    constructor(url) {
-        this.url = url;
-    }
+    // Variables
+    urlBase = 'https://api.fda.gov/drug/event.json?search=';
+    limit = '&limit=1';
+    startDate = '[20040101+TO';
+    endDate = '+20081231]';
+    urlConsult = this.urlBase + this.startDate + this.endDate + this.limit;
+
+    constructor() {}
 
     search() {
-        fetch(this.url)
+        fetch(this.urlConsult)
             .then(res => res.json()) //respuesta con json
             .then(data => {
-                console.log('url es ', data);
-            })
+                console.log('Contenido de la API', data);
+            });
     }
-} //Clase para manejar el uso de fetch, de acuerdo a lo ingresado en las fechas¿?
-
+}
 //Instancias
-
-//let fetcher = new Fetcher('la url');
-const fetcher = new Fetcher('https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:%22fatigue%22&limit=1');
+let fetcher = new Fetcher('url');
 fetcher.search();
-
+/* const fetcher = new Fetcher('https://api.fda.gov/drug/event.json?search=patient.reaction.reactionmeddrapt:%22fatigue%22&limit=1');
+fetcher.search();  */
 
 /* class DomWritter { //Clase para manejar el DOM
     
