@@ -52,14 +52,19 @@ document.getElementById('btnSearch').addEventListener('click', () => {
 
 class DomWritter { //Clase para manejar el DOM
 
-    constructor(){}
- /*    element;
+    nodoPadre;
+    nodoHijo;
 
-    constructor(id) {
-        this.element = document.getElementById(id);
-        console.log('mostrando a element ', this.element);
-    } */
+    constructor(itemResult) {
+        this.nodoPadre = document.getElementById(itemResult);
+        console.log(itemResult, 'mi item result');
+        
+    }
 
-
-
+    printScreen() {
+        this.nodoPadre.innerHTML = `Hola!!!!!`;
+    }
 }
+
+const result = new DomWritter('adverseEffectsList');
+result.printScreen();
