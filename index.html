@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <title>Efectos Adversos</title>
 </head>
+
 <body>
-    
+
     <div class="container">
         <h1>Eventos Adversos FDA</h1>
         <div class="input-date">
@@ -18,22 +20,27 @@
             <input type="date" id="endDate">
             <p>Limite</p>
             <input type="number" id="inputLimit">
-           
+
         </div>
 
         <div id="content">
             <button id="btnSearch">Buscar</button>
-        <!--     onclick="search()" -->
+            <!--     onclick="search()" -->
         </div>
 
-        <div id="adverseEffectsList">
-            <div id="itemResult">             
-            </div>
+        <div>
+            <ol id="adverseEffectsList">
+            </ol>
         </div>
+
     </div>
-    
 
+    <!--   <ol id='lista'> 
+        <li>Hola primero</li>
+        <li>Hola segundo</li>
+        </ol> -->
     <script src="app.js"></script>
-    <script src="api.js"></script>
+    <!--  <script src="api.js"></script> -->
 </body>
+
 </html>
